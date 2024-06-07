@@ -3,7 +3,7 @@
 
 This project analyzes YouTube trending videos data to understand the characteristics of videos that trend on YouTube. 
 
-The data is too big to store on github. Files to download from (https://www.kaggle.com/datasets/datasnaek/youtube-new/data?select=USvideos.csv). 
+The data is too big to store on github. Files to download from [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new/data?select=USvideos.csv). 
 
 ## Table of Contents
 
