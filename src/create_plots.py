@@ -5,10 +5,19 @@ import seaborn as sns
 import numpy as np
 
 
-def create_box_plot(data, name, title):
+def create_box_plot(data, name, title, with_legend=False):
+    plt.figure(figsize=(10, 10))
     fig = sns.boxplot(data["Time Difference"].dt.days) \
         .set_title(title)
     plt.ylabel("Days till trending")
+    if with_legend:
+        longest_vid = data.iloc[data["Time Difference"].idxmax()]
+        days = longest_vid["Time Difference"].days
+        uploaded = longest_vid["publish_time"]
+        trended = longest_vid["trending_date"]
+        video = longest_vid["title"]
+        plt.legend(labels=[f"Video: {video}", f"Longest time took: {days} days",
+                           f"Uploaded: {uploaded}", f"Trended: {trended}"], loc="best")
     fig.get_figure().savefig(f"images/{name}.png")
 
 

@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime, timedelta
 import seaborn as sns
@@ -37,7 +36,7 @@ if __name__ == "__main__":
     cp.create_box_plot(removed_outlier_df, "without_outliers",
                        "Distribution without outliers")
     cp.create_box_plot(youtube_data, "with_outliers",
-                       "Distribution with outliers")
+                       "Distribution with outliers", with_legend=True)
     cp.create_histogram_plot(
         removed_outlier_df, title="Distribution of days till trending", name="histogram")
 
