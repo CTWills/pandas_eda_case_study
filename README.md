@@ -53,6 +53,10 @@ The script performs an analysis on YouTube videos data, which is read from `yout
 
    ![Bar Plot Views and Videos Per Genre](images/bar_plots_compare.png)
 
+9. **Checking correlationship between genre, likes, dislikes, comment counts, and time difference using heatmap.
+    
+   ![Heatmap](images/heatmap.png)
+
 ## Output
 
 The script generates several plots and saves them in the current directory. The plots include box plots, a histogram, and bar plots. The plots are also displayed above in the description of the analysis.
