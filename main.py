@@ -44,3 +44,5 @@ if __name__ == "__main__":
     cp.create_bar_plot(genre_views, "bar_plot_views", "Views per genre")
 
     cp.create_bar_plots(videos_per_genre, "bar_plots_compare")
+
+    cp.create_heatmap(youtube_data, "heatmap")

@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime, timedelta
 import seaborn as sns
+import numpy as np
 
 
 def create_box_plot(data, name, title):
@@ -27,8 +28,17 @@ def create_bar_plot(data, name, title):
 
 
 def create_bar_plots(data, name):
-    fig, axes = plt.subplots()
-    fig = data.plot.bar(subplots=True, layout=(
-        1, 2), figsize=(16, 8), title="Views per Amount of Videos")
+    data.plot.bar(subplots=True, layout=(
+        1, 2), title="Views per Amount of Videos")
+    plt.tight_layout()
+    plt.savefig(f"images/{name}.png")
+
+
+def create_heatmap(data, name):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    numeric_columns = data.select_dtypes(include=np.number).columns
+    correlation_matrix = data[numeric_columns].corr()
+    sns.heatmap(data=correlation_matrix, ax=ax)
+    plt.title("Correlation of youtube data")
     plt.tight_layout()
     plt.savefig(f"images/{name}.png")
